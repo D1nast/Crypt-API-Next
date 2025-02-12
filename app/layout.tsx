@@ -4,10 +4,14 @@ import Footer from './footer';
 
 export default function Layout({ children }: { children: React.ReactNode }) {
   return (
-    <div>
-      <Header />
-      {/* <main>{children}</main> ページごとのコンテンツ */}
-      <Footer />
-    </div>
+    <html lang="en">
+      <body>
+        <Header />
+        <main>{children}</main>
+        <Footer />
+      </body>
+    </html>
+
   );
 }
+
