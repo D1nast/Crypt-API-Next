@@ -1,10 +1,15 @@
+import React from "react";
+import Ranking from "./lpcomponent/Ranking";
+import News from "./lpcomponent/NewsApi";
 
-import LP from './lpcomponent/LP';
-
-export default function Home() {
-  return <LP />;
+export default function LP() {
+    return (
+        <>
+            <News />
+            <Ranking />
+        </>
+    );
 }
-
 
 
 
