@@ -16,7 +16,7 @@ const Footer = () => {
 
                 {/* フッターの左半分 CNの画像 */}
                 <Box sx={{display:{xs:'none',sm:'block'}}} style={{flex:'2',paddingLeft:'80px',width:'30%'}}>
-                    <Image src="/cnicon.png" alt="Description" style={{ width: '80%', height: 'auto' }} />
+                    <Image src="/cnicon.png" alt="Description" width={800} height={600} style={{ width: '80%', height: 'auto' }} />
                 </Box>
 
                 {/* フッタの右半分　サイト説明 */}
