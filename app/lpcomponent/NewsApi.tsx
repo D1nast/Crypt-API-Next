@@ -1,7 +1,6 @@
 'use client';
 
-import { useEffect, useState } from 'react';
-import axios from 'axios';
+import { useState } from 'react';
 import Typography from '@mui/material/Typography';  
 import Tabs from '@mui/material/Tabs';
 import Tab from '@mui/material/Tab';
@@ -16,6 +15,10 @@ interface Article {
   description: string;
   url: string;
   urlToImage: string;
+}
+// Propsの型定義
+  interface NewsProps {
+    data: Article[];
 }
 
 interface CustomTabPanelProps {
@@ -45,19 +48,8 @@ function a11yProps(index: number) {
   };
 }
 
-export default function NewsAPI() {
-  const [news, setNews] = useState<Article[]>([]);
+export default function NewsAPI({data}:NewsProps) {  
   const [value, setValue] = useState<number>(0);
-
-  useEffect(() => {
-    const fetchNews = async () => {
-      const url = `${process.env.NEXT_PUBLIC_API}/news`;
-      const request = await axios.get(url);
-      setNews(request.data.articles);
-    };
-    fetchNews();
-  }, []);
-
   return (
     <Box sx={{ backgroundColor: '#000000', maxWidth: '100%' }}>
       {/* タイトル */}
@@ -80,7 +72,7 @@ export default function NewsAPI() {
       <Box sx={{ display: 'flex', flexDirection: 'row', flexWrap: 'wrap', paddingTop: { xs: '5px', sm: '30px' }, justifyContent: 'center' }}>
         {[0, 8, 16, 24].map((startIndex, tabIndex) => (
           <CustomTabPanel key={tabIndex} value={value} index={tabIndex}>
-            {news.slice(startIndex, startIndex + 8).map((res, key) => (
+            {data.slice(startIndex, startIndex + 8).map((res, key) => (
               <Card key={key} sx={{ maxWidth: 260, maxHeight: 400, marginBottom: 2, display: { xs: 'none', sm: 'block' } }}>
                 <a href={res.url} target="_blank" rel="noopener noreferrer" style={{ textDecoration: 'none' }}>
                   <CardMedia sx={{ height: 160, objectFit: 'cover' }} image={res.urlToImage} />

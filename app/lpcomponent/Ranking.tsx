@@ -17,7 +17,7 @@ interface RankingProps {
 
 // Ranking コンポーネントに型を適用
 export default function Ranking({ data }: RankingProps) {
-  console.log("Rendered Data:", data); // デバッグ用
+
   const convertNum = (num: string) => {
     const convert = parseFloat(num) / 1e9; // 10億ドル単位（Billion USD）
     return convert.toLocaleString(undefined, { maximumFractionDigits: 2 }) + "B";
