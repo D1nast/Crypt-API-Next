@@ -46,26 +46,26 @@ export default function SignUp(){
     };
 
     return(
-        <Box sx={{border:{xs:'none',sm:0},padding:{xs:'150px 50px 150px 50px',sm:'150px 0px 60px 0px'},display:'flex',flexDirection:'column',justifyContent:'center',backgroundColor:'#000000'}}>
+        <Box sx={{border:{xs:"none",sm:0},padding:{xs:"150px 50px 150px 50px",sm:"150px 0px 60px 0px"},display:"flex",flexDirection:"column",justifyContent:"center",backgroundColor:"#000000"}}>
             {/* サブスク登録画面 */}
-            <Box sx={{display:'flex',justifyContent:'center',paddingTop:'20px',paddingBottom:'20px'}}>
-                <Box sx={{width:"500px",display:"flex",flexDirection:"column",alignItems:"center",maxWidth:'100%',
-                    padding:{xs:'20px 0px 20px 0px',sm:'20px 0px 20px 0px'},border:"solid #FFFFFF",boxShadow:"0 3px 5px rgba(0, 0, 0, 0.22)"}}>
-                    <Typography sx={{marginBottom:"20px",color:'#FFFFFF'}}>Subscription</Typography>
+            <Box sx={{display:"flex",justifyContent:"center",paddingTop:"20px",paddingBottom:"20px"}}>
+                <Box sx={{width:"500px",display:"flex",flexDirection:"column",alignItems:"center",maxWidth:"100%",
+                    padding:{xs:"20px 0px 20px 0px",sm:"20px 0px 20px 0px"},border:"solid #FFFFFF",boxShadow:"0 3px 5px rgba(0, 0, 0, 0.22)"}}>
+                    <Typography sx={{marginBottom:"20px",color:"#FFFFFF"}}>Subscription</Typography>
                 {/* メールアドレス */}
                 <Box>
                     {/* <input value={email} placeholder="Mail" onChange={(e) => setEmail(e.target.value)} sx={{ width: "400px" }}/> */}
                     <Input value={email} placeholder=" Mail" onChange={(e) => setEmail(e.target.value)} 
-                    sx ={{backgroundColor:'white',width:{xs:'250px',sm:'400px'},height:{xs:'20px',sm:'20px'}}} />
+                    sx ={{backgroundColor:"white",width:{xs:"250px",sm:"400px"},height:{xs:"20px",sm:"20px"}}} />
                 </Box>
 
                 {/* パスワード入力 */}
-                <Box sx={{marginTop:'50px',display:'flex',alignItems:'center',maxWidth:'400px'}}>
+                <Box sx={{marginTop:"50px",display:"flex",alignItems:"center",maxWidth:"400px"}}>
                     {/* <input value={pass} placeholder="Pass(６文字以上)" type={passwordType} onChange={(e) => setPass(e.target.value)} style={{ width: "400px"}}/> */}
                     <Input value={pass} placeholder=" Pass(６文字以上)"type={passwordType} onChange={(e) => setPass(e.target.value)} 
-                    sx ={{backgroundColor:'white',width:{xs:'225px',sm:'400px'},height:{xs:'20px',sm:'20px'}}} />
-                    {passwordType === "password" && (<VisibilityOffIcon sx={{marginLeft:"8px",backgroundColor:'white',maxHeight:'20px'}} onClick={() => setPasswordType("text")} className="Password__visual"/>)}
-                    {passwordType === "text" && (<VisibilityIcon sx={{marginLeft:"8px",backgroundColor:'white',maxHeight:'20px'}} onClick={() => setPasswordType("password")} className="Password__visual"/>)}
+                    sx ={{backgroundColor:"white",width:{xs:"225px",sm:"400px"},height:{xs:"20px",sm:"20px"}}} />
+                    {passwordType === "password" && (<VisibilityOffIcon sx={{marginLeft:"8px",backgroundColor:"white",maxHeight:"20px"}} onClick={() => setPasswordType("text")} className="Password__visual"/>)}
+                    {passwordType === "text" && (<VisibilityIcon sx={{marginLeft:"8px",backgroundColor:"white",maxHeight:"20px"}} onClick={() => setPasswordType("password")} className="Password__visual"/>)}
                 </Box>
                  
                 {/* ボタン */}
@@ -77,10 +77,10 @@ export default function SignUp(){
                 </Box>
             </Box>
             {/* 各ボタン説明 */}
-            <Box sx={{marginTop:'50px',display:'flex',flexDirection:'column',alignItems:'center'}}>
-                <Typography sx={{marginBottom:"20px",color:'#FFFFFF'}}>Subscribe : Register your email address</Typography>
-                <Typography sx={{marginBottom:"20px",color:'#FFFFFF'}}>Stop / resume : Stop delivering email. If you've already stopped,resume delivering.</Typography>
-                <Typography sx={{marginBottom:"20px",color:'#FFFFFF'}}>Delete : Delete your email address</Typography>
+            <Box sx={{marginTop:"50px",display:"flex",flexDirection:"column",alignItems:"center"}}>
+                <Typography sx={{marginBottom:"20px",color:"#FFFFFF"}}>Subscribe : Register your email address</Typography>
+                <Typography sx={{marginBottom:"20px",color:"#FFFFFF"}}>Stop / resume : Stop delivering email. If you&apos;ve already stopped,resume delivering.</Typography>
+                <Typography sx={{marginBottom:"20px",color:"#FFFFFF"}}>Delete : Delete your email address</Typography>
             </Box>
         </Box> 
                 

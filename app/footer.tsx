@@ -6,6 +6,8 @@ import Link from '@mui/material/Link';
 import Box from '@mui/material/Box';
 import ScrollToTopButton from './scrollTop'; 
 import { Typography } from '@mui/material';
+import Image from 'next/image';
+
 
 const Footer = () => {
   return (
@@ -14,7 +16,7 @@ const Footer = () => {
 
                 {/* フッターの左半分 CNの画像 */}
                 <Box sx={{display:{xs:'none',sm:'block'}}} style={{flex:'2',paddingLeft:'80px',width:'30%'}}>
-                    <img src="/cnicon.png" alt="Description" style={{ width: '80%', height: 'auto' }} />
+                    <Image src="/cnicon.png" alt="Description" style={{ width: '80%', height: 'auto' }} />
                 </Box>
 
                 {/* フッタの右半分　サイト説明 */}

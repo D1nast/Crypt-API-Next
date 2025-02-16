@@ -1,46 +1,49 @@
-'use client';
-
-import { useEffect, useState } from 'react';
-import axios from 'axios';
 import Typography from '@mui/material/Typography';
-import Box from '@mui/material/Box';  
+import Box from '@mui/material/Box';
 
-// コインデータの型定義
-interface CoinData {
-  rank: number;
+// Coinデータの型定義
+interface Coin {
+  rank: string;
   name: string;
   symbol: string;
   priceUsd: string;
   marketCapUsd: string;
 }
 
-export default function Ranking() {
-  const [coins, setCoindata] = useState<CoinData[]>([]);
+// Propsの型定義
+interface RankingProps {
+  data: Coin[];
+}
 
-  // 値に小数点とカンマを付加する関数
+export async function getStaticProps() {
+  try {
+    const req = await fetch("https://api.coincap.io/v2/assets?limit=30");
+    const res = await req.json();
+
+    console.log("Fetched Data:", res); // デバッグ用
+
+    return { props: { data: res.data || [] } };
+  } catch (error) {
+    console.error("Error fetching data:", error);
+    return { props: { data: [] } };
+  }
+}
+
+// Ranking コンポーネントに型を適用
+export default function Ranking({ data }: RankingProps) {
+  console.log("Rendered Data:", data); // デバッグ用
+
+  if (!data || data.length === 0) return <p>Failed to fetch data</p>;
+
   const convertNum = (num: string) => {
-    const convert = Math.round(parseFloat(num)) / 100000;
-    return convert.toLocaleString();
+    const convert = parseFloat(num) / 1e9; // 10億ドル単位（Billion USD）
+    return convert.toLocaleString(undefined, { maximumFractionDigits: 2 }) + "B";
   };
-
-  useEffect(() => {
-    const fetchCoin = async () => {
-      try {
-        const url = `${process.env.NEXT_PUBLIC_API}`;
-        const response = await axios.get(url);
-        console.log(response);
-        setCoindata(response.data.data);
-      } catch (error) {
-        console.error('Error fetching coin data:', error);
-      }
-    };
-    fetchCoin();
-  }, []);
 
   return (
     <Box sx={{ paddingTop: '50px', paddingBottom: '50px', textAlign: 'center', backgroundColor: '#000000' }}>
       <Box sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center' }}>
-        {coins.map((coin) => (
+        {data.map((coin) => (
           <Box
             key={coin.rank}
             sx={{
@@ -55,20 +58,20 @@ export default function Ranking() {
           >
             {/* 順位 */}
             <Box sx={{ color: 'white' }}>
-              <Typography variant="h5" component="div">{coin.rank}</Typography>
+              <Typography variant="h5">{coin.rank}</Typography>
             </Box>
             {/* 通称 */}
             <Box sx={{ flex: 2, textAlign: 'center', color: 'white' }}>
-              <Typography variant="h5" component="div" sx={{ display: { xs: 'none', sm: 'block' } }}>
+              <Typography variant="h5" sx={{ display: { xs: 'none', sm: 'block' } }}>
                 {coin.name} ({coin.symbol})
               </Typography>
-              <Typography variant="h5" component="div" sx={{ display: { xs: 'block', sm: 'none' } }}>
+              <Typography variant="h5" sx={{ display: { xs: 'block', sm: 'none' } }}>
                 {coin.name}
               </Typography>
             </Box>
             {/* 価格 */}
             <Box sx={{ flex: 2, textAlign: 'center', color: 'white' }}>
-              <Typography variant="h5" component="div">${coin.priceUsd}</Typography>
+              <Typography variant="h5">${parseFloat(coin.priceUsd).toLocaleString()}</Typography>
             </Box>
             {/* 時価総額 */}
             <Box sx={{ flex: 2, textAlign: 'right', color: 'white', display: { xs: 'none', sm: 'block' } }}>
