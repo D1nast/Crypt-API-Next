@@ -1,0 +1,15 @@
+{
+  "crypt": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-front-crypt-8874e-authRole",
+      "UnauthRoleArn": "arn:aws:iam::002060322285:role/amplify-front-crypt-8874e-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::002060322285:role/amplify-front-crypt-8874e-authRole",
+      "Region": "ap-northeast-1",
+      "DeploymentBucketName": "amplify-front-crypt-8874e-deployment",
+      "UnauthRoleName": "amplify-front-crypt-8874e-unauthRole",
+      "StackName": "amplify-front-crypt-8874e",
+      "StackId": "arn:aws:cloudformation:ap-northeast-1:002060322285:stack/amplify-front-crypt-8874e/d401f5f0-ecec-11ef-a173-0e288d55226d",
+      "AmplifyAppId": "d2647wfqrptad0"
+    }
+  }
+}
