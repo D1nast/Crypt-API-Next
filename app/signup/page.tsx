@@ -7,7 +7,6 @@ import Input from '@mui/material/Input';
 import VisibilityIcon from "@mui/icons-material/Visibility";
 import VisibilityOffIcon from "@mui/icons-material/VisibilityOff";
 import { generateClient } from '@aws-amplify/api';
-import outputs from '../../amplify_outputs.json';
 
 const client = generateClient(); // AppSync クライアントを作成
 
