@@ -1,0 +1,19 @@
+{
+  "version": "39.0.0",
+  "files": {
+    "cc1f720e876c2a161c37065f18f93276ab6869c225b35b66b389b5cc7075babf": {
+      "source": {
+        "path": "amplify-front-jirei-sandbox-05fb2c4da1.template.json",
+        "packaging": "file"
+      },
+      "destinations": {
+        "current_account-current_region": {
+          "bucketName": "cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}",
+          "objectKey": "cc1f720e876c2a161c37065f18f93276ab6869c225b35b66b389b5cc7075babf.json",
+          "assumeRoleArn": "arn:${AWS::Partition}:iam::${AWS::AccountId}:role/cdk-hnb659fds-file-publishing-role-${AWS::AccountId}-${AWS::Region}"
+        }
+      }
+    }
+  },
+  "dockerImages": {}
+}

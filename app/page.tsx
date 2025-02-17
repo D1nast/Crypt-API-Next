@@ -1,5 +1,8 @@
-import NewsAPI from "./lpcomponent/NewsApi";
-import Ranking from "./lpcomponent/Ranking";
+import NewsAPI from "./component/NewsApi";
+import Ranking from "./component/Ranking";
+import { Amplify } from 'aws-amplify';
+import outputs from '../amplify_outputs.json'; // amplify_outputs.json のパスを確認
+Amplify.configure(outputs); // Amplifyの設定を行う
 
 // ランキングを取得
 async function fetchRanking() {

@@ -10,6 +10,11 @@
       "StackName": "amplify-front-crypt-8874e",
       "StackId": "arn:aws:cloudformation:ap-northeast-1:002060322285:stack/amplify-front-crypt-8874e/d401f5f0-ecec-11ef-a173-0e288d55226d",
       "AmplifyAppId": "d2647wfqrptad0"
+    },
+    "categories": {
+      "api": {
+        "amplifyDatasource": {}
+      }
     }
   }
 }

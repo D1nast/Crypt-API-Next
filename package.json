@@ -12,6 +12,7 @@
     },
     "dependencies": {
         "@aws-amplify/api-graphql": "^4.7.4",
+        "@aws-amplify/cli": "^12.14.3",
         "@emotion/react": "^11.14.0",
         "@emotion/styled": "^11.14.0",
         "@mui/icons-material": "^6.4.4",

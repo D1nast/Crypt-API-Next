@@ -1,0 +1,89 @@
+{
+  "version": "tree-0.1",
+  "tree": {
+    "id": "App",
+    "path": "",
+    "children": {
+      "amplify-front-jirei-sandbox-05fb2c4da1": {
+        "id": "amplify-front-jirei-sandbox-05fb2c4da1",
+        "path": "amplify-front-jirei-sandbox-05fb2c4da1",
+        "children": {
+          "deploymentType": {
+            "id": "deploymentType",
+            "path": "amplify-front-jirei-sandbox-05fb2c4da1/deploymentType",
+            "constructInfo": {
+              "fqn": "aws-cdk-lib.CfnOutput",
+              "version": "2.178.2"
+            }
+          },
+          "region": {
+            "id": "region",
+            "path": "amplify-front-jirei-sandbox-05fb2c4da1/region",
+            "constructInfo": {
+              "fqn": "aws-cdk-lib.CfnOutput",
+              "version": "2.178.2"
+            }
+          },
+          "CDKMetadata": {
+            "id": "CDKMetadata",
+            "path": "amplify-front-jirei-sandbox-05fb2c4da1/CDKMetadata",
+            "children": {
+              "Default": {
+                "id": "Default",
+                "path": "amplify-front-jirei-sandbox-05fb2c4da1/CDKMetadata/Default",
+                "constructInfo": {
+                  "fqn": "aws-cdk-lib.CfnResource",
+                  "version": "2.178.2"
+                }
+              },
+              "Condition": {
+                "id": "Condition",
+                "path": "amplify-front-jirei-sandbox-05fb2c4da1/CDKMetadata/Condition",
+                "constructInfo": {
+                  "fqn": "aws-cdk-lib.CfnCondition",
+                  "version": "2.178.2"
+                }
+              }
+            },
+            "constructInfo": {
+              "fqn": "constructs.Construct",
+              "version": "10.4.2"
+            }
+          },
+          "BootstrapVersion": {
+            "id": "BootstrapVersion",
+            "path": "amplify-front-jirei-sandbox-05fb2c4da1/BootstrapVersion",
+            "constructInfo": {
+              "fqn": "aws-cdk-lib.CfnParameter",
+              "version": "2.178.2"
+            }
+          },
+          "CheckBootstrapVersion": {
+            "id": "CheckBootstrapVersion",
+            "path": "amplify-front-jirei-sandbox-05fb2c4da1/CheckBootstrapVersion",
+            "constructInfo": {
+              "fqn": "aws-cdk-lib.CfnRule",
+              "version": "2.178.2"
+            }
+          }
+        },
+        "constructInfo": {
+          "fqn": "aws-cdk-lib.Stack",
+          "version": "2.178.2"
+        }
+      },
+      "Tree": {
+        "id": "Tree",
+        "path": "Tree",
+        "constructInfo": {
+          "fqn": "constructs.Construct",
+          "version": "10.4.2"
+        }
+      }
+    },
+    "constructInfo": {
+      "fqn": "aws-cdk-lib.App",
+      "version": "2.178.2"
+    }
+  }
+}
