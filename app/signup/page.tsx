@@ -4,13 +4,13 @@ import { useState } from "react";
 import Typography from '@mui/material/Typography';
 import Box from '@mui/material/Box';
 import Input from '@mui/material/Input';
-import VisibilityIcon from "@mui/icons-material/Visibility";
-import VisibilityOffIcon from "@mui/icons-material/VisibilityOff";
+// import VisibilityIcon from "@mui/icons-material/Visibility";
+// import VisibilityOffIcon from "@mui/icons-material/VisibilityOff";
 
 import { Amplify } from 'aws-amplify';
 import { generateClient } from 'aws-amplify/api';
 import outputs from '../../amplify_outputs.json';
-import { createUser, updateUser, deleteUser } from '../../src/graphql/mutations';
+import { createUser } from '../../src/graphql/mutations';
 import * as APITypes from "../../src/API";
 Amplify.configure(outputs);
 const client = generateClient();
